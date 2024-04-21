@@ -429,7 +429,46 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
 3. **Costo de Transferencia de Datos Salientes**
    Después de los primeros 100 GB gratuitos, el costo de transferencia de datos salientes se calcula según el volumen y la tarifa correspondiente
 
-   $`\begin{cases}0, & \text{si} \ D_{\text{total}} \leq 100 \\0,09 \times (D_{\text{total}} - 100), & \text{si} \ 100 < D_{\text{total}} \leq 10440 \\(0,09 \times 10240) + 0,085 \times (D_{\text{total}} - 10240), & \text{si} \ 10240 < D_{\text{total}} \leq 51200 \\(0,09 \times 10240) + (0,085 \times 40960) + 0,07 \times (D_{\text{total}} - 51200), & \text{si} \ 51200 < D_{\text{total}} \leq 153600 \\(0,09 \times 10240) + (0,085 \times 40960) + (0,07 \times 102400) + 0,05 \times (D_{\text{total}} - 153600), & \text{si} \ D_{\text{total}} > 153600\end{cases}`$
+    - **Caso 1: Menos de 100 GB**
+      Si el volumen total de datos salientes es menor o igual a 100 GB, el costo es cero:
+
+      $`\begin{cases}0, & \text{si} \ D_{\text{total}} \leq 100\end{cases}$$
+
+    - **Caso 2: Entre 100 GB y 10 TB**
+      Si el volumen total de datos salientes está entre 100 GB y 10 TB, el costo se calcula como:
+
+      \[
+      \begin{cases}
+      0,09 \times (D_{\text{total}} - 100), & \text{si} \ 100 < D_{\text{total}} \leq 10440
+      \end{cases}
+      \]
+
+    - **Caso 3: Entre 10 TB y 50 TB**
+      Para volúmenes entre 10 TB y 50 TB, el costo se calcula con un componente fijo para los primeros 10 TB y otro componente variable:
+
+      \[
+      \begin{cases}
+      (0,09 \times 10240) + 0,085 \times (D_{\text{total}} - 10240), & \text{si} \ 10240 < D_{\text{total}} \leq 51200
+      \end{cases}
+      \]
+
+    - **Caso 4: Entre 50 TB y 150 TB**
+      Para volúmenes entre 50 TB y 150 TB, se incluye el componente fijo de los 50 TB anteriores y un componente variable:
+
+      \[
+      \begin{cases}
+      (0,09 \times 10240) + (0,085 \times 40960) + 0,07 \times (D_{\text{total}} - 51200), & \text{si} \ 51200 < D_{\text{total}} \leq 153600
+      \end{cases}
+      \]
+
+    - **Caso 5: Más de 150 TB**
+      Para volúmenes mayores a 150 TB, el costo incluye el componente fijo de los primeros 150 TB y un componente adicional para el volumen superior:
+
+      \[
+      \begin{cases}
+      (0,09 \times 10240) + (0,085 \times 40960) + (0,07 \times 102400) + 0,05 \times (D_{\text{total}} - 153600), & \text{si} \ D_{\text{total}} > 153600
+      \end{cases}
+      \]
 
 4. **Costo Total**
    El costo total se obtiene sumando el costo por hora, el costo del almacenamiento EBS y el costo de transferencia de datos salientes:

@@ -521,7 +521,7 @@ Para calcular el costo total mensual, debes tener en cuenta los siguientes compo
    El costo total mensual se calcula sumando el costo de la instancia, el almacenamiento SSD y la transferencia de datos salientes (si aplica):
 
     
-   $\text{Costo Total} = \text{Costo por Hora} + \text{Costo del Almacenamiento} + \text{Costo de Transferencia de Datos Salientes}$
+   $$\text{Costo Total} = \text{Costo por Hora} + \text{Costo del Almacenamiento} + \text{Costo de Transferencia de Datos Salientes}$$
    
 
 Aplicando estas fórmulas, el costo total mensual para cada configuración en GCP es el siguiente:

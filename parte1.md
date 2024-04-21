@@ -456,35 +456,11 @@ Para Google Cloud Platform (GCP), el costo total mensual de operaci처n de las m�
 
 Las configuraciones de gama baja, media y alta se comparan con sus respectivas tarifas por hora y especificaciones:
 
-#### Gama Baja
-
-| Especificaciones     | Descripci처n             |
-|---------------------|-------------------------|
-| CPU                 | 4 vCPU                   |
-| Memoria RAM         | 16 GB                    |
-| Almacenamiento      | 40 GB SSD                |
-| Transferencia de Datos Salientes | 1 TB       |
-| Costo Total Mensual | 155,65 USD              |
-
-#### Gama Media
-
-| Especificaciones     | Descripci처n             |
-|---------------------|-------------------------|
-| CPU                 | 16 vCPU                  |
-| Memoria RAM         | 64 GB                    |
-| Almacenamiento      | 256 GB SSD               |
-| Transferencia de Datos Salientes | 3 TB       |
-| Costo Total Mensual | 638,91 USD              |
-
-#### Gama Alta
-
-| Especificaciones     | Descripci처n             |
-|---------------------|-------------------------|
-| CPU                 | 64 vCPU                  |
-| Memoria RAM         | 128 GB                   |
-| Almacenamiento      | 512 GB SSD               |
-| Transferencia de Datos Salientes | 10 TB      |
-| Costo Total Mensual | 2009,66 USD             |
+| Configuraci처n | CPU   | Memoria RAM | Almacenamiento | Transferencia de Datos Salientes | Costo Total Mensual (USD) |
+|--------------|-------|-------------|----------------|----------------------------------|--------------------------|
+| Gama Baja    | 4 vCPU | 16 GB       | 40 GB SSD      | 1 TB                             | 155,65                    |
+| Gama Media   | 16 vCPU| 64 GB       | 256 GB SSD     | 3 TB                             | 638,91                    |
+| Gama Alta    | 64 vCPU| 128 GB      | 512 GB SSD     | 10 TB                            | 2009,66                   |
 
 ### Costo Total Mensual por Configuraci처n
 

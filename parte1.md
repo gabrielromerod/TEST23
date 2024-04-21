@@ -419,21 +419,21 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
 1. **Costo por Hora de la Instancia**
    El costo por hora se multiplica por el número de horas en un mes (730 horas):
 
-   $
+   $$
    \text{Costo por Hora} = \text{Tarifa por Hora} \times 730 
-    $
+    $$
 
 2. **Costo del Almacenamiento EBS**
    El costo del almacenamiento EBS se calcula multiplicando el almacenamiento en GB por la tarifa por GB al mes:
 
-   $
+   $$
    \text{Costo EBS} = \text{Almacenamiento} \times 0,08 
-   $
+   $$
 
 3. **Costo de Transferencia de Datos Salientes**
-   Después de los primeros 100 GB gratuitos, el costo de transferencia de datos salientes se calcula según el volumen y la tarifa correspondiente. Si el volumen total de datos salientes es $D_{\text{total}}$, entonces el costo de transferencia de datos $C_{\text{data\_out}}$ se calcula como:
+   Después de los primeros 100 GB gratuitos, el costo de transferencia de datos salientes se calcula según el volumen y la tarifa correspondiente. Si el volumen total de datos salientes es $$D_{\text{total}}$$, entonces el costo de transferencia de datos $$C_{\text{data\_out}}$$ se calcula como:
 
-   $
+   $$
    \begin{cases}
       0, & \text{si} \ D_{\text{total}} \leq 100 \\
       0,09 \times (D_{\text{total}} - 100), & \text{si} \ 100 < D_{\text{total}} \leq 10440 \\
@@ -441,14 +441,14 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
       (0,09 \times 10240) + (0,085 \times 40960) + 0,07 \times (D_{\text{total}} - 51200), & \text{si} \ 51200 < D_{\text{total}} \leq 153600 \\
       (0,09 \times 10240) + (0,085 \times 40960) + (0,07 \times 102400) + 0,05 \times (D_{\text{total}} - 153600), & \text{si} \ D_{\text{total}} > 153600
    \end{cases}
-   $
+   $$
 
 4. **Costo Total**
    El costo total se obtiene sumando el costo por hora, el costo del almacenamiento EBS y el costo de transferencia de datos salientes:
 
-   $ 
+   $$ 
    \text{Costo Total} = \text{Costo por Hora} + \text{Costo EBS} + \text{Costo de Transferencia de Datos Salientes}
-   $
+   $$
 
 #### Costo Total Mensual por Configuración
 
@@ -507,9 +507,9 @@ Para calcular el costo total mensual, debes tener en cuenta los siguientes compo
 1. **Costo de la Instancia por Hora**
    Multiplicando la tarifa por hora por el número de horas en un mes (730 horas):
 
-   $
+   $$
    \text{Costo por Hora} = \text{Tarifa por Hora} \times 730 
-   $
+   $$
 
 2. **Costo del Almacenamiento SSD**
    El costo se calcula automáticamente según el almacenamiento seleccionado en la configuración, no se especifica una tarifa fija por GB.

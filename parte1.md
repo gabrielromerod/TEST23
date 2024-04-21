@@ -573,3 +573,20 @@ Para cada configuración, hemos calculado el costo de transferencia de datos sal
 
 ### Comparación de Precios de Máquinas Virtuales
 
+En la comparación de precios de máquinas virtuales entre Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure, se observan diferencias significativas en los costos totales mensuales para las configuraciones de gama baja, media y alta. De los 3 puntos a analizar solo nos tomaremos en cuenta el CPU, Memoria RAM y Almacenamiento.
+
+Gama Baja
+
+| Proveedor | CPU   | Memoria RAM | Almacenamiento | Costo Total Mensual (USD) |
+|-----------|-------|-------------|----------------|--------------------------|
+| AWS       | 4 vCPU| 16 GB       | 40 GB SSD      | 196,62                   |
+| GCP       | 4 vCPU| 16 GB       | 40 GB SSD      | 155,65                   |
+| Azure     | 4 vCPU| 16 GB       | 40 GB SSD      | 162,25                   |
+
+Gama Media
+
+| Proveedor | CPU   | Memoria RAM | Almacenamiento | Costo Total Mensual (USD) |
+|-----------|-------|-------------|----------------|--------------------------|
+| AWS       | 16 vCPU| 64 GB      | 256 GB SSD     | 731,16                   |
+| GCP       | 16 vCPU| 64 GB      | 256 GB SSD     | 638,91                   |
+| Azure     | 16 vCPU| 64 GB      | 256 GB SSD     | 655,13                   |

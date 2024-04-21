@@ -8,6 +8,8 @@ En esta sección se analizaran a los 3 proveedores líderes de Cloud Computing, 
 
 1. [Regiones y Zonas de Disponibilidad](#regiones-y-zonas-de-disponibilidad)
 2. [Comparación de Regiones y Zonas de Disponibilidad](#comparación-de-regiones-y-zonas-de-disponibilidad)
+3. [Precios de Máquinas Virtuales](#precios-de-máquinas-virtuales)
+4. [Comparación de Precios de Máquinas Virtuales](#comparación-de-precios-de-máquinas-virtuales)
 
 ### Regiones y Zonas de Disponibilidad
 
@@ -536,4 +538,38 @@ Aplicando estas fórmulas, el costo total mensual para cada configuración en GC
 Esta estructura muestra cómo Google Cloud Platform (GCP) calcula el costo total mensual para diferentes configuraciones de máquinas virtuales, tomando en cuenta la tarifa por hora, el costo del almacenamiento y la transferencia de datos salientes (si aplica). 
 
 ### Microsoft Azure
+
+Para Microsoft Azure, el costo total mensual de operación de las máquinas virtuales se basa en la tarifa por hora, el costo del almacenamiento y la transferencia de datos salientes. A continuación, se presenta la estructura del cálculo del costo total mensual para cada configuración, incluyendo tablas para visualizar las tarifas.
+
+| Configuración | CPU   | Memoria RAM | Almacenamiento | Transferencia de Datos Salientes | Región  | Costo Total Mensual (USD) |
+|---------------|-------|-------------|----------------|---------------------------------|---------|--------------------------|
+| Gama Baja     | 4 vCPU| 16 GB       | 40 GB SSD      | 1 TB                            | East US | 162,25                    |
+| Gama Media    | 16 vCPU| 64 GB      | 256 GB SSD     | 3 TB                            | East US | 655,13                    |
+| Gama Alta     | 64 vCPU| 128 GB     | 512 GB SSD     | 10 TB                           | East US | 2,257,11                  |
+
+### Explicación del Costo Total Mensual
+
+Para calcular el costo total mensual en Microsoft Azure, necesitamos considerar varios elementos:
+
+1. **Costo de Instancia**
+   El costo de la instancia se calcula multiplicando la tarifa por hora por el número de horas en un mes (730 horas). Dependiendo de la configuración, esta tarifa varía significativamente.
+
+2. **Costo del Almacenamiento Administrado (Managed Disks)**
+   Microsoft Azure cobra una tarifa mensual por cada disco administrado. El costo se basa en el tamaño del disco y el tipo de almacenamiento (por ejemplo, SSD). En la tabla anterior, se muestran configuraciones con diferentes tamaños de discos y sus respectivos costos.
+
+3. **Costo de Transferencia de Datos Salientes**
+   Azure ofrece 100 GB gratuitos de transferencia de datos salientes por mes. Para transferencias superiores a este límite, se aplican tarifas escalonadas basadas en el volumen de datos:
+
+   - **Primeros 100 GB/mes**: Gratis.
+   - **Siguientes 10 TB/mes**: 0,087 USD por GB.
+   - **Siguientes 40 TB/mes**: 0,083 USD por GB.
+   - **Siguientes 100 TB/mes**: 0,07 USD por GB.
+   - **Siguientes 350 TB/mes**: 0,05 USD por GB.
+
+Para cada configuración, hemos calculado el costo de transferencia de datos salientes en función del volumen total de datos transferidos por mes.
+
+4. **Costo Total Mensual**
+   El costo total mensual se obtiene sumando el costo de la instancia, el costo del almacenamiento administrado y el costo de transferencia de datos salientes. Para la gama baja, se incluyó el costo de 1 TB de datos salientes, para la gama media, 3 TB, y para la gama alta, 10 TB.
+
+### Comparación de Precios de Máquinas Virtuales
 

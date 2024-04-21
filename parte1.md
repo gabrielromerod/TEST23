@@ -433,22 +433,18 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
 3. **Costo de Transferencia de Datos Salientes**
    Después de los primeros 100 GB gratuitos, el costo de transferencia de datos salientes se calcula según el volumen y la tarifa correspondiente. Si el volumen total de datos salientes es $D_{\text{total}}$, entonces el costo de transferencia de datos $C_{\text{data\_out}}$ se calcula como:
 
-   $
-   \begin{cases}
+   $\begin{cases}
       0, & \text{si} \ D_{\text{total}} \leq 100 \\
       0,09 \times (D_{\text{total}} - 100), & \text{si} \ 100 < D_{\text{total}} \leq 10440 \\
       (0,09 \times 10240) + 0,085 \times (D_{\text{total}} - 10240), & \text{si} \ 10240 < D_{\text{total}} \leq 51200 \\
       (0,09 \times 10240) + (0,085 \times 40960) + 0,07 \times (D_{\text{total}} - 51200), & \text{si} \ 51200 < D_{\text{total}} \leq 153600 \\
       (0,09 \times 10240) + (0,085 \times 40960) + (0,07 \times 102400) + 0,05 \times (D_{\text{total}} - 153600), & \text{si} \ D_{\text{total}} > 153600
-   \end{cases}
-   $
+   \end{cases}$
 
 4. **Costo Total**
    El costo total se obtiene sumando el costo por hora, el costo del almacenamiento EBS y el costo de transferencia de datos salientes:
 
-   $ 
-   \text{Costo Total} = \text{Costo por Hora} + \text{Costo EBS} + \text{Costo de Transferencia de Datos Salientes}
-   $
+   $ \text{Costo Total} = \text{Costo por Hora} + \text{Costo EBS} + \text{Costo de Transferencia de Datos Salientes}$
 
 #### Costo Total Mensual por Configuración
 

@@ -434,7 +434,7 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
 4. **Costo Total**
    El costo total se obtiene sumando el costo por hora, el costo del almacenamiento EBS y el costo de transferencia de datos salientes:
 
-   $$ \text{Costo Total} = \text{Costo por Hora} + \text{Costo EBS} + \text{Costo de Transferencia de Datos Salientes}$$
+   $$\text{Costo Total} = \text{Costo por Hora} + \text{Costo EBS} + \text{Costo de Transferencia de Datos Salientes}$$
 
 #### Costo Total Mensual por Configuración
 

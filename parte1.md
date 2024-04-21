@@ -1,5 +1,9 @@
 # Parte 1: Máquinas Virtuales en Proveedores líderes de Cloud Computing
 
+## Integrantes
+
+- Gabriel Eduardo Romero Diez
+
 ## 📝 Introducción
 
 En esta sección se analizaran a los 3 proveedores líderes de Cloud Computing, Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure. Se analizará la oferta de máquinas virtuales de cada proveedor, comparando las características de las máquinas virtuales, los precios y las regiones en las que se ofrecen.
@@ -10,8 +14,10 @@ En esta sección se analizaran a los 3 proveedores líderes de Cloud Computing, 
 2. [Comparación de Regiones y Zonas de Disponibilidad](#comparación-de-regiones-y-zonas-de-disponibilidad)
 3. [Precios de Máquinas Virtuales](#precios-de-máquinas-virtuales)
 4. [Comparación de Precios de Máquinas Virtuales](#comparación-de-precios-de-máquinas-virtuales)
+5. [Conclusión](#conclusión)
+6. [Referencias](#referencias)
 
-### Regiones y Zonas de Disponibilidad
+## Regiones y Zonas de Disponibilidad
 
 
 #### Microsoft Azure
@@ -571,22 +577,73 @@ Para cada configuración, hemos calculado el costo de transferencia de datos sal
 4. **Costo Total Mensual**
    El costo total mensual se obtiene sumando el costo de la instancia, el costo del almacenamiento administrado y el costo de transferencia de datos salientes. Para la gama baja, se incluyó el costo de 1 TB de datos salientes, para la gama media, 3 TB, y para la gama alta, 10 TB.
 
-### Comparación de Precios de Máquinas Virtuales
+## Comparación de Precios de Máquinas Virtuales
 
 En la comparación de precios de máquinas virtuales entre Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure, se observan diferencias significativas en los costos totales mensuales para las configuraciones de gama baja, media y alta. De los 3 puntos a analizar solo nos tomaremos en cuenta el CPU, Memoria RAM y Almacenamiento.
 
-Gama Baja
+Los costos reales de las máquinas virtuales para cada proveedor, sin la transferencia de datos salientes, son los siguientes:
 
-| Proveedor | CPU   | Memoria RAM | Almacenamiento | Costo Total Mensual (USD) |
-|-----------|-------|-------------|----------------|--------------------------|
-| AWS       | 4 vCPU| 16 GB       | 40 GB SSD      | 196,62                   |
-| GCP       | 4 vCPU| 16 GB       | 40 GB SSD      | 155,65                   |
-| Azure     | 4 vCPU| 16 GB       | 40 GB SSD      | 162,25                   |
+#### Amazon Web Services (AWS)
 
-Gama Media
+| Configuración | Costo Total Mensual (USD) | Costo Real sin Transferencia (USD) |
+|---------------|--------------------------|-----------------------------------|
+| Gama Baja     | 196,62                   | 146,87                            |
+| Gama Media    | 731,16                   | 581,41                            |
+| Gama Alta     | 2160,70                  | 1910,95                           |
 
-| Proveedor | CPU   | Memoria RAM | Almacenamiento | Costo Total Mensual (USD) |
-|-----------|-------|-------------|----------------|--------------------------|
-| AWS       | 16 vCPU| 64 GB      | 256 GB SSD     | 731,16                   |
-| GCP       | 16 vCPU| 64 GB      | 256 GB SSD     | 638,91                   |
-| Azure     | 16 vCPU| 64 GB      | 256 GB SSD     | 655,13                   |
+#### Google Cloud Platform (GCP)
+
+| Configuración | Costo Total Mensual (USD) | Costo Real sin Transferencia (USD) |
+|---------------|--------------------------|-----------------------------------|
+| Gama Baja     | 155,65                   | 155,65                            |
+| Gama Media    | 638,91                   | 638,91                            |
+| Gama Alta     | 2009,66                  | 2009,66                           |
+
+#### Microsoft Azure
+
+| Configuración | Costo Total Mensual (USD) | Costo Real sin Transferencia (USD) |
+|---------------|--------------------------|-----------------------------------|
+| Gama Baja     | 162,25                   | 112,50                            |
+| Gama Media    | 655,13                   | 505,38                            |
+| Gama Alta     | 2257,11                  | 2007,36                           |
+
+## Conclusión
+
+La comparación entre Amazon Web Services (AWS), Google Cloud Platform (GCP) y Microsoft Azure muestra diferencias notables en términos de costo total mensual y costo real sin transferencia de datos salientes. Estos resultados pueden guiar a los clientes en la selección del proveedor más adecuado según sus necesidades y presupuesto. Aquí se presenta un análisis profundo y recomendaciones para cada caso.
+
+### Gama Baja
+En configuraciones de gama baja, GCP tiene el costo total mensual más bajo, con 155,65 USD. Sin embargo, el costo real sin transferencia es similar al costo total debido a la eliminación de tarifas por transferencia saliente a partir de enero de 2024. AWS tiene un costo total mensual más alto (196,62 USD), pero su costo real sin transferencia es más bajo (146,87 USD). Azure tiene el costo real más bajo (112,50 USD), pero su costo total es ligeramente mayor que el de GCP.
+
+**Recomendación**: Para configuraciones de gama baja, Azure es la opción más económica sin considerar la transferencia de datos. Si la transferencia de datos es un factor importante, AWS puede ser más adecuado por su menor costo real. GCP también es una opción competitiva si el costo total es la principal preocupación.
+
+### Gama Media
+Para configuraciones de gama media, GCP tiene el costo total más bajo (638,91 USD), seguido por Azure (655,13 USD) y AWS (731,16 USD). El costo real sin transferencia sigue el mismo orden, con GCP y Azure casi igualados, pero Azure tiene un costo ligeramente menor (505,38 USD) que GCP (638,91 USD).
+
+**Recomendación**: Para gama media, GCP es una opción competitiva debido a su costo total mensual más bajo. Azure es adecuado para aquellos que buscan el costo real más bajo sin transferencia, aunque con un costo total ligeramente mayor que GCP. AWS es la opción más costosa en esta categoría, pero ofrece una mayor diversidad de servicios y soporte.
+
+### Gama Alta
+En la gama alta, GCP tiene el costo total mensual más bajo (2009,66 USD), seguido de cerca por AWS (2160,70 USD) y Azure (2257,11 USD). El costo real sin transferencia muestra a AWS como la opción más económica (1910,95 USD), con Azure y GCP en rangos similares (2007,36 USD y 2009,66 USD, respectivamente).
+
+**Recomendación**: Para configuraciones de gama alta, AWS es la opción más económica cuando no se considera la transferencia de datos. GCP tiene el costo total mensual más bajo, lo que puede ser una ventaja para quienes buscan optimizar el presupuesto. Azure es adecuado para clientes que valoran la integración con otros servicios de Microsoft, aunque a un costo ligeramente mayor.
+
+### Consideraciones Finales
+
+El proveedor ideal depende del caso de uso específico, presupuesto y necesidades de transferencia de datos. AWS es ideal para clientes que requieren una amplia gama de servicios y tienen requisitos de transferencia variables. GCP ofrece tarifas competitivas, y la eliminación de costos de transferencia saliente es atractiva para casos de uso con grandes volúmenes de datos. Azure es ideal para quienes buscan integración con el ecosistema de Microsoft y prefieren precios más bajos en configuraciones de gama baja y media.
+
+En conclusión, la elección de un proveedor de nube debe basarse en un análisis detallado de los costos y las necesidades específicas de la carga de trabajo. Una evaluación cuidadosa puede ayudar a tomar la mejor decisión para cada escenario.
+
+## Referencias
+
+1. Amazon Web Services. (2024). *AWS Global Infrastructure*. Recuperado de [https://aws.amazon.com/about-aws/global-infrastructure/](https://aws.amazon.com/about-aws/global-infrastructure/)
+
+2. Google Cloud. (2024). *Locations and Zones*. Recuperado de [https://cloud.google.com/about/locations](https://cloud.google.com/about/locations)
+
+3. Microsoft Azure. (2024). *Azure Regions*. Recuperado de [https://azure.microsoft.com/en-us/global-infrastructure/regions/](https://azure.microsoft.com/en-us/global-infrastructure/regions/)
+
+4. Amazon Web Services. (2024). *Amazon EC2 Pricing*. Recuperado de [https://aws.amazon.com/ec2/pricing/](https://aws.amazon.com/ec2/pricing/)
+
+5. Google Cloud. (2024). *Google Cloud Pricing Calculator*. Recuperado de [https://cloud.google.com/products/calculator](https://cloud.google.com/products/calculator)
+
+6. Microsoft Azure. (2024). *Azure Pricing Calculator*. Recuperado de [https://azure.microsoft.com/en-us/pricing/calculator/](https://azure.microsoft.com/en-us/pricing/calculator/)
+
+7. Amazon Workspace Health Dashboard. (2024). *Amazon Workspace Health Dashboard*. Recuperado de [https://clients.amazonworkspaces.com/Health.html](https://clients.amazonworkspaces.com/Health.html)

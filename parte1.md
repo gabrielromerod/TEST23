@@ -432,7 +432,11 @@ El costo total mensual para una máquina virtual se calcula de la siguiente mane
     - **Caso 1: Menos de 100 GB**
       Si el volumen total de datos salientes es menor o igual a 100 GB, el costo es cero:
 
-      $`begin{cases}0, & \text{si} \ D_{\text{total}} \leq 100\end{cases} `$
+      $`
+      \begin{cases}
+      0, & \text{si } D_{\text{total}} \leq 100 \text{ GB}
+      \end{cases}
+      `$
 
     - **Caso 2: Entre 100 GB y 10 TB**
       Si el volumen total de datos salientes está entre 100 GB y 10 TB, el costo se calcula como:
